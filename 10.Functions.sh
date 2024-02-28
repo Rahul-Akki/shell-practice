@@ -36,12 +36,12 @@ else
     echo -e "$G Status:$N You are the root user"
 fi
 
-yum list installed maven 
+yum list installed nodejs 
 
 if [ $? -ne 0 ]
 then
     echo -e "$G Status:$N Mysql not yet installed in the system, Installation in progress.."
-    yum install maven -y
+    yum install nodejs -y
     VALIDATE $? "MySQL Installation"
 else 
     echo -e "$Y Status: $N Mysql is already installed in the system "
