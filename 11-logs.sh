@@ -16,6 +16,11 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+TIMESTAMP=$(date +%m-%d-%Y-%A-%X)
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
+
+echo "Script started executing on : $TIMESTAMP"
+
 VALIDATE() {
     if [ $1 -ne 0 ]
         then
@@ -36,12 +41,12 @@ else
     echo -e "$G Status:$N You are the root user"
 fi
 
-yum list installed nodejs 
+yum list installed nodejs &>> $TIMESTAMP
 
 if [ $? -ne 0 ]
 then
     echo -e "$G Status:$N Mysql not yet installed in the system, Installation in progress.."
-    yum install nodejs -y
+    yum install nodejs -y &>> $TIMESTAMP
     VALIDATE $? "MySQL Installation"
 else 
     echo -e "$Y Status: $N Mysql is already installed in the system "
