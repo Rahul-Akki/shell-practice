@@ -44,7 +44,7 @@ then
         fi
     
 else 
-    echo -e "$Y Status: $Y Mysql is already installed in the system "
+    echo -e "$Y Status: $N Mysql is already installed in the system "
     exit 1
 fi
 
