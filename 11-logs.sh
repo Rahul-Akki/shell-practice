@@ -10,16 +10,15 @@
 #3 --> install my sql --> < yum install mysql -y >
 #3.1 --> if installed Sucessfully --> Print installed sucessfully
 #3.1 --> if not installed Sucessfully --> Print Error
+TIMESTAMP=$(date +%m-%d-%Y-%A-%X)
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-TIMESTAMP=$(date +%m-%d-%Y-%A-%X)
-LOGFILE="/tmp/$0-$TIMESTAMP.log"
-
-echo "Script started executing on : $TIMESTAMP" &>> $TIMESTAMP
+echo "Script started executing on : $TIMESTAMP" &>> $LOGFILE
 
 VALIDATE() {
     if [ $1 -ne 0 ]
@@ -41,14 +40,16 @@ else
     echo -e "$G Status:$N You are the root user"
 fi
 
-yum list installed redis &>> $TIMESTAMP
+yum list installed redis &>> $LOGFILE
 
 if [ $? -ne 0 ]
 then
     echo -e "$G Status:$N Mysql not yet installed in the system, Installation in progress.."
-    yum install redis -y &>> $TIMESTAMP
+    yum install redis -y &>> $LOGFILE
     VALIDATE $? "MySQL Installation"
 else 
     echo -e "$Y Status:$N Mysql is already installed in the system "
     exit 1
 fi
+
+#/shell-practice/shell-practice
