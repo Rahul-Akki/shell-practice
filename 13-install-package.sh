@@ -41,10 +41,9 @@ else
     echo -e "$G Status:$N You are the root user"
 fi
 
-yum list installed redis &>> $LOGFILE
-
 for PACKAGE in $@
 do
+    yum list installed $PACKAGE &>> $LOGFILE
     if [ $? -ne 0 ]
     then
         echo -e "$G Status:$N $PACKAGE not yet installed in the system, Installation in progress.."
