@@ -41,14 +41,14 @@ else
     echo -e "$G Status:$N You are the root user"
 fi
 
-yum list installed nodejs &>> $TIMESTAMP
+yum list installed redis &>> $TIMESTAMP
 
 if [ $? -ne 0 ]
 then
     echo -e "$G Status:$N Mysql not yet installed in the system, Installation in progress.."
-    yum install nodejs -y &>> $TIMESTAMP
+    yum install redis -y &>> $TIMESTAMP
     VALIDATE $? "MySQL Installation"
 else 
-    echo -e "$Y Status: $N Mysql is already installed in the system "
+    echo -e "$Y Status:$N Mysql is already installed in the system "
     exit 1
 fi
