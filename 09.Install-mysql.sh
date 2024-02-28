@@ -26,12 +26,12 @@ else
     echo -e "$G Status: You are the root user $n"
 fi
 
-yum list installed postfix
+yum list installed mysql
 
 if [ $? -ne 0 ]
 then
     echo -e "$G Status:$N Mysql not yet installed in the system, Installation in progress.."
-        yum install postfix
+        yum install mysql
 
         if [ $? -ne 0 ]
         then
