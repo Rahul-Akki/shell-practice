@@ -1,4 +1,4 @@
 #!/bin/bash
 
-DATE=$(date +%d-%m-%y-%A-%X)
+DATE=$(date +%d-%m-%Y-%A-%X)
 echo "script started executing at : $DATE"
