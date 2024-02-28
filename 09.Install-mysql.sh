@@ -30,21 +30,21 @@ yum list installed postfix
 
 if [ $? -ne 0 ]
 then
-    echo -e "$R Status: Mysql not yet installed in the system, Installation in progress..  $N"
+    echo -e "$G Status:$N Mysql not yet installed in the system, Installation in progress.."
         yum install postfix
 
         if [ $? -ne 0 ]
         then
-            echo -e "$G Status: Mysql Installed Sucessfully $N"
+            echo -e "$R Status: $N Mysql Installation Failed"
             exit 1
             
         else 
-            echo -e "$E Status: Mysql Installation Failed $N"
+            echo -e "$G Status:$N Mysql Installed Sucessfully "
             
         fi
     
 else 
-    echo -e "$Y Status: Mysql is already installed in the system $N"
+    echo -e "$Y Status: $Y Mysql is already installed in the system "
     exit 1
 fi
 
