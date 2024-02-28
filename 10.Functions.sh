@@ -19,10 +19,10 @@ N="\e[0m"
 VALIDATE() {
     if [ $1 -ne 0 ]
         then
-            echo -e "Status: $2 $R Failed $G"
+            echo -e "Status: $2 $R ...Failed $G"
             exit 1
         else 
-            echo -e " Status: $2 $G Sucessfully $N "
+            echo -e " Status: $2 $G ...Sucess$N "
         fi
 }
  
