@@ -3,7 +3,6 @@
 echo "Please enter User-Name : "
 read USERNAME
 echo "Please enter Password : "
-read PASSWORD
+read -s PASSWORD
 
-echo "
-User Name / Password : $USERNAME / $PASSWORD "
+echo "User Name / Password : $USERNAME / $PASSWORD "
