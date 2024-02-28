@@ -33,7 +33,18 @@ then
     echo -e "$R Status: Mysql not yet installed in the system, Installation in progress..  $N"
     
 else 
-    echo -e "$G Status: Mysql is already installed in the system $n"
+    echo -e "$Y Status: Mysql is already installed in the system $N"
+    exit 1
+fi
+
+yum install mysql
+
+if [ $? -ne 0 ]
+then
+    echo -e "$G Status: Mysql Installed Sucessfully $N"
+    
+else 
+    echo -e "$E Status: Mysql Installation Failed $N"
     exit 1
 fi
 
