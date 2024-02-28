@@ -41,7 +41,7 @@ else
     echo -e "$G Status:$N You are the root user"
 fi
 
-yum list installed nodejs 
+yum list installed nodejs &>> $TIMESTAMP
 
 if [ $? -ne 0 ]
 then
