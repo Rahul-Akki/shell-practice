@@ -19,7 +19,7 @@ N="\e[0m"
 TIMESTAMP=$(date +%m-%d-%Y-%A-%X)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
-echo "Script started executing on : $TIMESTAMP"
+echo "Script started executing on : $TIMESTAMP" &>> $TIMESTAMP
 
 VALIDATE() {
     if [ $1 -ne 0 ]
@@ -41,7 +41,7 @@ else
     echo -e "$G Status:$N You are the root user"
 fi
 
-yum list installed nodejs &>> $TIMESTAMP
+yum list installed nodejs 
 
 if [ $? -ne 0 ]
 then
