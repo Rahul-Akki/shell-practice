@@ -20,8 +20,8 @@ ID=$(id -u)
 
 if ( $ID -ne 0 )
 then
-    echo "$R Error: Please Run with the root access $N"
+    echo -e"$R Error: Please Run with the root access $N"
 else 
-    echo "$G Status: You are the root user $n"
+    echo -e"$G Status: You are the root user $n"
 fi
 
