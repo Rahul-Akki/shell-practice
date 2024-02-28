@@ -18,9 +18,10 @@ N="\e[0m"
 
 ID=$(id -u)
 
-if ( $ID -ne 0 )
+if [ $ID -ne 0 ]
 then
     echo -e"$R Error: Please Run with the root access $N"
+    exit 1
 else 
     echo -e"$G Status: You are the root user $n"
 fi
