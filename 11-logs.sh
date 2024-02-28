@@ -52,4 +52,5 @@ else
     exit 1
 fi
 
-#/shell-practice/shell-practice
+#cd home/centos/shell-practice/shell-practice/
+
