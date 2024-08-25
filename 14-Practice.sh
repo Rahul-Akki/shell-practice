@@ -39,7 +39,7 @@ fi
 
 for package in $@
 do
-    yum list install git $package
+    yum list installed $package
     if [&? -ne 0]
     then
     yum install $package -y
