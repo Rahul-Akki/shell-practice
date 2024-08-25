@@ -21,7 +21,7 @@ else
     echo " You are root user "
 fi
 
-dnf module disable mysql -y
+yum install mysql -y
 
 if [ $? -ne 0  ]
 then
