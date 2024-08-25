@@ -12,27 +12,16 @@
 #3.1 --> if not installed Sucessfully --> Print Error
 
 ID=$(id -u)
-
-VALIDATE(){
-    if [ $1 -ne 0  ]
-    then
-        echo "ERROR :: $2 Failed"
-        exit 1
-    else
-        echo "$2 is SUCCESSFUL"
-    fi
-}
+TIMESTAMP=$(date +%m-%d-%Y-%A-%X)
+R="\e[31m"
+B="\e[32m"
+G="\e[33m"
+N="\e[0m"
 
 if [ $ID -ne 0  ]
 then
-    echo "ERROR :: Please run with root access"
+    echo -e "$R ERROR :: Please run with root access $N"
     exit 1
 else
-    echo " You are root user "
+    echo " $G You are root user $N "
 fi
-
-yum install git -y
-VALIDATE $? "Installing Git"
-
-yum install postman -y
-VALIDATE $? "Installing postman"
