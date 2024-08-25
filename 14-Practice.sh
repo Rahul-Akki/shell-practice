@@ -18,6 +18,9 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+LOGFILE="/TEMP/$0-$TIMESTAMP.log"
+echo "Script started executing at $TIMESTAMP" &>> $LOGFILE
+
 VALIDATE() {
     if [ $1 -ne 0 ]
     then
@@ -39,10 +42,10 @@ fi
 
 for package in $@
 do
-    yum list installed $package
+    yum list installed $package &>> $LOGFILE
     if [ $? -ne 0 ]
     then
-        yum install $package -y
+        yum install $package -y &>> $LOGFILE
         VALIDATE $? "Inastallation of $package "
     else
         echo -e "$Y Skipping... $N"
