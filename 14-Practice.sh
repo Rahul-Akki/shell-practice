@@ -1,9 +1,9 @@
 #!/bin/bash
 
-FRUITS-=("APPLE", "BANANNA", "MANGO")
+FRUITS=("APPLE", "BANANNA", "MANGO")
 
-echo "${FRUITS[0]}"
+echo "This is ${FRUITS[0]}"
 
-echo "${FRUITS[1]}"
+echo "This is ${FRUITS[1]}"
 
-echo "${FRUITS[2]}"
+echo "This is ${FRUITS[2]}"
