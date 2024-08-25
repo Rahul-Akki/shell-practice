@@ -40,9 +40,11 @@ fi
 for package in $@
 do
     yum list installed $package
-    if [&? -ne 0]
+    if [ &? -ne 0 ]
     then
-    yum install $package -y
-    VALIDATE $? "Inastallation of $package "
+        yum install $package -y
+        VALIDATE $? "Inastallation of $package "
+    else
+        echo "$Y Skipping... $N"
     fi
 done
