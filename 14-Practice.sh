@@ -14,8 +14,8 @@
 ID=$(id -u)
 TIMESTAMP=$(date +%m-%d-%Y-%A-%X)
 R="\e[31m"
-B="\e[32m"
-G="\e[33m"
+G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
 
 if [ $ID -ne 0  ]
@@ -23,5 +23,5 @@ then
     echo -e "$R ERROR :: Please run with root access $N"
     exit 1
 else
-    echo " $G You are root user $N "
+    echo -e "$G You are root user $N "
 fi
