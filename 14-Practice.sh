@@ -18,6 +18,17 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+VALIDATE() {
+    if [ $1 -ne 0 ]
+    then
+        echo -e "Status: $2 $R ...Failed $G"
+        exit 1
+    else 
+        echo -e " Status: $2 $G ...Sucess$N "
+    fi
+}
+
+
 if [ $ID -ne 0  ]
 then
     echo -e "$R ERROR :: Please run with root access $N"
@@ -26,4 +37,11 @@ else
     echo -e "$G You are root user $N "
 fi
 
-echo " All args passed $@ "
+for package in $@
+do
+    yum list install git $package
+    if [&? -ne 0]
+    then
+    VALIDATE $? "Inastallation of $package "
+
+done
