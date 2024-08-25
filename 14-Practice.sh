@@ -1,10 +1,9 @@
 #!/bin/bash
 
-echo "enter username"
-read -s USERNAME
+FRUITS-=("APPLE", "BANANNA", "MANGO")
 
-echo "enter password"
-read -s PASSWORD
+echo "${FRUITS[0]}"
 
+echo "${FRUITS[1]}"
 
-echo "Username/Password: $USERNAME/$PASSWORD"
+echo "${FRUITS[2]}"
