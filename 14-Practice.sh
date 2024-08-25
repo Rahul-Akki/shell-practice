@@ -1,9 +1,11 @@
 #!/bin/bash
 
-FRUITS=("APPLE", "BANANNA", "MANGO")
+NUMBER=$1
 
-echo "This is ${FRUITS[0]}"
+if [ $NUMBER -gt 100 ]
+than
+    echo "given num $NUMBER is great"
 
-echo "This is ${FRUITS[1]}"
-
-echo "This is ${FRUITS[2]}"
+else
+    echo "given num $NUMBER IS LESS"
+fi
