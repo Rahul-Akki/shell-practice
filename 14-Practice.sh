@@ -20,3 +20,5 @@ then
 else
     echo " You are root user "
 fi
+
+dnf module disable mysql -y
