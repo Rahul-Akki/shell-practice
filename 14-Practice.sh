@@ -1,5 +1,6 @@
 #!/bin/bash
 
-DATE=$(date)
+USERNAME=$1
+PASSWORD=$2
 
-echo $DATE
+echo "Username/Password: $USERNAME/$PASSWORD"
