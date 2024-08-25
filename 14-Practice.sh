@@ -18,7 +18,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-LOGFILE="/TEMP/$0-$TIMESTAMP.log"
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
 echo "Script started executing at $TIMESTAMP" &>> $LOGFILE
 
 VALIDATE() {
