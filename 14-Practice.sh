@@ -22,3 +22,11 @@ else
 fi
 
 dnf module disable mysql -y
+
+if [ $? -ne 0  ]
+then
+    echo "ERROR :: Installing MySQL is failed"
+    exit 1
+else
+    echo "Installing MySQL is SUCCESS"
+fi
