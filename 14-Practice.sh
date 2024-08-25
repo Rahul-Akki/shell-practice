@@ -25,3 +25,5 @@ then
 else
     echo -e "$G You are root user $N "
 fi
+
+echo " All args passed $@ "
