@@ -42,6 +42,7 @@ do
     yum list install git $package
     if [&? -ne 0]
     then
+    yum install $package -y
     VALIDATE $? "Inastallation of $package "
 
 done
