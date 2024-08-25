@@ -2,4 +2,4 @@
 
 DATE=$(date)
 
-echo $date
+echo $DATE
