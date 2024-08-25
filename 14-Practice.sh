@@ -44,5 +44,5 @@ do
     then
     yum install $package -y
     VALIDATE $? "Inastallation of $package "
-
+    fi
 done
