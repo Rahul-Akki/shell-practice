@@ -31,4 +31,4 @@ else
     echo " You are root user "
 fi
 
-yum list installed mysql
+yum install mysql
